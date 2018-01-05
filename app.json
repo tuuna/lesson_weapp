@@ -1,12 +1,53 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/order/order",
+    "pages/address/address",
+    "pages/addaddr/addaddr",
+    "pages/favorite/favorite",
+    "pages/cart2/cart2",
+    "pages/cart/cart",
+    "pages/products/products",
+    "pages/brand/brand",
+    "pages/sitemap/sitemap",
+    "pages/searchlist/searchlist",
+    "pages/search/search",
+    "pages/article/article",
+    "pages/ucenter/ucenter",
+    "pages/prolist/prolist",
+    "pages/cate2/cate2",
+    "pages/agreement/agreement"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#040404",
+    "navigationBarTitleText": "课堂一键通",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "#ff0000",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "images/31.png",
+        "iconPath": "images/30.png",
+        "pagePath": "pages/index/index",
+        "text": "任务"
+      },
+      {
+        "selectedIconPath": "images/21.png",
+        "iconPath": "images/20.png",
+        "pagePath": "pages/sitemap/sitemap",
+        "text": "笔记"
+      },
+      {
+        "selectedIconPath": "images/51.png",
+        "iconPath": "images/50.png",
+        "pagePath": "pages/ucenter/ucenter",
+        "text": "我的"
+      }
+    ]
   }
 }
