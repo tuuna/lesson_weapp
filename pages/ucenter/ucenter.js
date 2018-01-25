@@ -1,29 +1,32 @@
 var util = require('../../common/common.js');
-let URLINDEX=util.prefix();
 Page({
   data:{
     userInfo:{},
-    img_bg:URLINDEX+"/index/bd@2x.png",
+    img_bg:"../../images/37.png",
     line1:[
       {
         name:"我的课表",
-        img:URLINDEX+"/index/youhuijuan.png",
-        id:1
+        img:"../../images/33.png",
+        id:1,
+        url:"timetable"
       },
       {
         name:"课程签到",
-        img:URLINDEX+"/index/integral.png",
-        id:2
+        img: "../../images/34.png",
+        id:2,
+        url:"signin"
       },
       {
         name:"我的作业",
-        img:URLINDEX+"/index/CustomerService.png",
-        id:3
+        img: "../../images/35.png",
+        id:3,
+        url:"homework"
       },
       {
         name:"意见反馈",
-        img:URLINDEX+"/index/positioning.png",
-        id:4
+        img: "../../images/36.png",
+        id:4,
+        url:"suggestion"
       }
     ],
   },

@@ -11,8 +11,8 @@
     </view>
 </view>
 <!--个人中心类目-->
-<view class="line flexbox" style="margin-top:20rpx">
-    <navigator url="url" wx:for="{{line1}}" wx:key="{{item.id}}" class="item">
+<view class="line flexbox" style="margin-top:20rpx" wx:for="{{line1}}" wx:key="{{item.id}}">
+    <navigator url="../{{item.url}}/{{item.url}}"  class="item">
         <image src="{{item.img}}" />
         <text class="text">{{item.name}}</text>
     </navigator>

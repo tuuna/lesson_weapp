@@ -1,0 +1,74 @@
+/* pages/homework/homework.wxss */
+/*根布局*/
+.content-container {
+width: 100%;
+position: absolute;
+}
+
+/*筛选头部*/
+.pick-header {
+  width: 100%;
+  height: 72rpx;
+  z-index: 60;
+  position: fixed;
+ background-color: lightcoral;
+}
+
+/*筛选项容器布局*/
+.pick-container {
+  width: 100%;
+  height: 300rpx;
+  background-color: lightgoldenrodyellow;
+  position: absolute;
+  z-index: 50;
+  top: -228rpx;
+}
+
+/*筛选项隐藏 显示动画 start*/
+@keyframes slidown {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.slidown {
+  display: block;
+  animation: slidown 0.1s ease-in both;
+}
+
+@keyframes slidup {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.slidup {
+  display: block;
+  animation: slidup 0.2s ease-in both;
+}
+/*筛选项隐藏 显示动画 end*/
+
+/*筛选项显示出来的时候的阴影*/
+.shadow {
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.2);
+  position: absolute;
+  z-index: 40;
+  top: 72rpx;
+}
+
+/*内容容器布局*/
+.content {
+  width: 100%;
+  position: absolute;
+  top: 72rpx;
+  z-index: 20;
+}

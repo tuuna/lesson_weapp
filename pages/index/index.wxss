@@ -1,148 +1,75 @@
-/**index.wxss**/
-
-/*顶部导航样式*/
-
-/*轮播图*/
-.slide-image{
-  width:750rpx;
-  height:422rpx;
+/* pages/leftSwiperDel/index.wxss */
+view{
+    box-sizing: border-box;
 }
-/*特别分类页面*/
-.goodsCate{
-  margin-top:20rpx;
-  background:#fff;
-  width:750rpx;
+.item-box{
+    width: 700rpx;
+    margin: 0 auto;
+    padding:40rpx 0;
 }
-.goodsCate .title{
-  font-size:30rpx;
-  height:96rpx;
-  display: -webkit-flex;
-  -webkit-align-items: center;
-  -webkit-justify-content: center;
-}
-.goodsCate .title .line{
-    margin: 0 17rpx;
-    opacity: 0.21;
-    background: #3d4245;
-    width: 23rpx;
-    height: 4rpx;
-}
-.goodsCate .content{
+.items{
     width: 100%;
-    display: -webkit-flex;
-    -webkit-align-items: center;
-    -webkit-justify-content: flex-start;
-    -webkit-flex-wrap: wrap;
 }
-.goodsCate .content .img{
-  margin-bottom:-10rpx;
-    width:374rpx;
-    height:161rpx;
+.item{
+    position: relative;
+    border-top: 2rpx solid #eee;
+    height: 120rpx;
+    line-height: 120rpx;
+    overflow: hidden;
+    
 }
-/*专辑页面*/
-.scrollContainer .itemL{
-   margin-top:20rpx;
-   background:#fff;
+.item:last-child{
+    border-bottom: 2rpx solid #eee;
 }
-.scrollContainer .itemL .title{
-    height: 90rpx;
-    font-size: 30rpx;
-    line-height:90rpx;
-    display:-webkit-flex;
-    -webkit-justify-content:space-between;
-    -webkit-align-items: center;
-    border-bottom:1rpx solid #eee;
-}
-.scrollContainer .itemL .title .logo-img{
-    margin-left:24rpx;
-    margin-right:24rpx;
-    width:60rpx;
-    height:60rpx;
-    position:relative;
-    top:20rpx;
-}
-.itemLike{
-  width:39rpx;
-  height:33rpx;
-  position:relative;
-    top:10rpx;
-    right:10rpx;
-}
-.itemLikeText{
-  display:inline-block;
-  width:55rpx;
-  font-size:24rpx;
-  margin-right:5rpx;
-  color:#bbb;
-}
-.banner-img{
-  position:relative;
-  height:379rpx;
-  width:750rpx;
-}
-.banner-img .img{
-  height:379rpx;
-  width:750rpx;
-}
-.goodsNum{
-    display: inline-block;
+.inner{
     position: absolute;
-    width: 128rpx;
-    height: 38rpx;
-    line-height: 38rpx;
-    text-align: center;
-    top: 24rpx;
-    left: 429rpx;
-    background: rgba(0,0,0,0.5);
-    border-radius: 4rpx;
-    color: #fff;
-    font-size: 22rpx;
-    z-index:2;
+    top:0;
 }
-.goodslookNum{
-    position: absolute;
-    width: 152rpx;
-    height: 38rpx;
-    line-height: 38rpx;
-    text-align: center;
-    top: 24rpx;
-    right: 11rpx;
-    background: rgba(0,0,0,0.5);
-    border-radius: 4rpx;
-    color: #fff;
-    font-size: 22rpx;
+.inner.txt{
+    background-color: #fff;
+    width: 100%;
+    z-index: 5;
+    padding:0 10rpx;
+    transition: left 0.2s ease-in-out;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
-.imglook{
-  width:35rpx;
-  height:21rpx;
-  position:relative;
-  top:4rpx;
-  right:4rpx;
+.inner.del{
+    background-color: #e64340;
+    width: 180rpx;text-align: center;
+    z-index: 4;
+    right: 0;
+    color: #fff
 }
-.scrollContainer .goodsList{  
-   white-space: nowrap;
-   height:310rpx;
-   width:100%;
+.item-icon{
+    width: 64rpx;
+    vertical-align: middle;
+    margin-right: 16rpx
 }
-.scrollContainer .goodsList .goodsListItem{
-  width:220rpx;
-  margin-top:20rpx;
-  border-right:1rpx solid #eee;
-  
+.thumb{
+    width: 200px;
+    height: 200px;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
 }
-.scrollContainer .goodsList .goodsListItem image{
-  width:180rpx;
-  height:180rpx;  
-}
-.scrollContainer .goodsList .goodsListItem .name{
-    width: 190rpx;
-    font-size: 24rpx;
-    color: #3d4225;
-    margin-top:30rpx;
-}
-.scrollContainer .goodsList .goodsListItem .price{
-  width:190rpx;
-  font-size: 24rpx; 
-  margin-top:10rpx;
-  color: rgb(255, 74, 160);
+/* .post {
+  float: right;
+  background-color: #ffffff;
+  position:fixed;
+  bottom: 20px;
+  right: 10px;
+  border: 0 solid #ffffff;
+  border-radius: 500px;
+  box-shadow: 4px 1px 1px #cccccc;
+} */
+
+.post {
+  position: fixed; 
+  bottom: 50px; 
+  right: 5px; 
+  background-color: skyblue; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  z-index: 500; 
 }

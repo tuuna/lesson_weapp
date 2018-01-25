@@ -1,0 +1,15 @@
+<view class="content-container">
+  <view class="pick-header" bindtap="onPickHeaderClick">
+    筛选pick-header view z-index:60
+  </view>
+
+  <view class="pick-container {{needAnimation ? (openPicker ? 'slidown' : 'slidup') : ''}}" >
+    筛选项 pick-container view z-index:50
+  </view>
+
+  <view class="shadow" style="height:{{contentHeight}}px;line-height:{{contentHeight}}px" hidden="  {{!openPicker}}">我是半透明阴影遮罩 view shadow  z-index:40</view>
+
+  <view class="content" style="height:{{contentHeight}}px">
+    我是内容content view z-index:20
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="lists">
+    <view class="contain">
+        <block wx:for="{{lists}}" wx:key="{{item.sendUserId}}">
+            <view class="list">
+                <view class="list__content{{item.isMoveLeft ? ' active' : ''}}" style="left:-{{item.moveLeftX}}px;right:{{item.moveLeftX}}px;" data-sendUserId="{{item.sendUserId}}" catchtouchstart="listtouchStart" catchtouchend="listtouchEnd" catchtouchcancel="listtouchcancel" catchtouchmove="listtouchMove">
+                    <view class="list__hd">
+                        <image src="{{item.img}}"/>
+                        <view class="list__msgnumber" wx:if="{{item.silence}}"></view>
+                        <view wx:elif="{{item.msgNumber > 0}}" class="list__messagenumber">
+                            <text hidden="{{item.silence}}" style="font-size:{{item.msgNumber > 99 ? '17' : '22'}}rpx;">{{item.msgNumber > 99 ? '99+' : item.msgNumber}}</text>
+                        </view>
+                    </view>
+                    <view class="list__bd">
+                        <view class="list__h3">
+                            <text class="list__name{{item.isteam ? ' list__teamname' : ''}}">{{item.name}}</text>
+                            <text class="list__sendtime">{{item.sendtime}}</text>
+                        </view>
+                        <view class="list__p{{item.silence ? ' silence' : ''}}">{{(item.silence && item.msgNumber > 0) ? '['+item.msgNumber +'条]' : ''}}{{item.desc}}</view><image wx:if="{{item.silence}}" class="list__silence" src="/image/silence.png"></image>
+                    </view>
+                    <view class="list__ft">
+                     
+                    </view>
+                </view>
+                
+                <view class="list__bg_btns">
+                    <view class="list__bg_btn_gray">{{item.isteam ? '取消关注' : '标为已读'}}</view>
+                    <view class="list__bg_btn_red">删除</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,22 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/order/order",
-    "pages/address/address",
-    "pages/addaddr/addaddr",
-    "pages/favorite/favorite",
-    "pages/cart2/cart2",
-    "pages/cart/cart",
-    "pages/products/products",
-    "pages/brand/brand",
-    "pages/sitemap/sitemap",
-    "pages/searchlist/searchlist",
-    "pages/search/search",
-    "pages/article/article",
-    "pages/ucenter/ucenter",
-    "pages/prolist/prolist",
-    "pages/cate2/cate2",
-    "pages/agreement/agreement"
+    "pages/addtask/addtask",
+    "pages/note/note",
+    "pages/timetable/timetable",
+    "pages/signin/signin",
+    "pages/homework/homework",
+    "pages/suggestion/suggestion",
+    "pages/ucenter/ucenter"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,7 +30,7 @@
       {
         "selectedIconPath": "images/21.png",
         "iconPath": "images/20.png",
-        "pagePath": "pages/sitemap/sitemap",
+        "pagePath": "pages/note/note",
         "text": "笔记"
       },
       {

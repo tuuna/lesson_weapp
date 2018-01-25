@@ -1,0 +1,12 @@
+<view class="item-box">
+  <view class="items">
+    <view wx:for="{{list}}"  wx:key="{{index}}"  class="item">
+    
+      <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
+      <image class="item-icon" mode="widthFix" src="{{item.icon}}"></image>{{item.txt}}</view>
+      <view data-index="{{index}}" bindtap = "delItem" class="inner del">删除</view>
+    </view>
+  </view>
+</view>
+<navigator url='../addtask/addtask'><image src='../../images/add.png' class='post' style='width: 50px; height: 50px;'></image></navigator>
+<!-- <icon type="success" size="50" class="post" bindtap="onPostClick"/> -->

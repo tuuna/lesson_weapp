@@ -1,0 +1,15 @@
+<view class="section">意见反馈</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="email_parten">
+    <view class="email_parten_title">邮箱</view>
+    <input name="email" placeholder="输入老师的邮箱号" />
+  </view>
+  <view class="content_parten">
+    <view class="content_parten_title">意见内容</view>
+    <textarea class="textarea_content" auto-focus='true' placeholder='请输入对老师的意见反馈' />
+  </view>
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">清空</button>
+  </view>
+</form>
