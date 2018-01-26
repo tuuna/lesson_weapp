@@ -1,15 +1,8 @@
-<view class="content-container">
-  <view class="pick-header" bindtap="onPickHeaderClick">
-    筛选pick-header view z-index:60
-  </view>
-
-  <view class="pick-container {{needAnimation ? (openPicker ? 'slidown' : 'slidup') : ''}}" >
-    筛选项 pick-container view z-index:50
-  </view>
-
-  <view class="shadow" style="height:{{contentHeight}}px;line-height:{{contentHeight}}px" hidden="  {{!openPicker}}">我是半透明阴影遮罩 view shadow  z-index:40</view>
-
-  <view class="content" style="height:{{contentHeight}}px">
-    我是内容content view z-index:20
-  </view>
+<view class="page">
+    <view class="page_bd">
+        <view class="body_head" bindtap="showitem">2018-01-26</view>
+        <navigator url="../views/navigators/navigator1/navigator1"><view class="{{open?'display_show':'display_none'}}">高等数学</view></navigator>
+        <navigator url="../views/navigators/navigator2/navigator2"><view class="{{open?'display_show':'display_none'}}">离散数学</view></navigator>
+        <navigator url="../views/navigators/navigator3/navigator3"><view class="{{open?'display_show':'display_none'}}">概率论</view></navigator>
+    </view>
 </view>

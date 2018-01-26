@@ -1,2 +1,15 @@
-<!--pages/addtask/addtask.wxml-->
-<text>pages/addtask/addtask.wxml</text>
+<form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">添加任务</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="input" class="weui-input" placeholder="请输入文本" />
+      </view>
+    </view>
+
+  <view class="weui-btn-area">
+    <button type="primary" formType="submit">提交</button>
+    <button formType="reset">清空</button>
+  </view>
+</form>

@@ -1,1 +1,6 @@
 /* pages/addtask/addtask.wxss */
+@import "../../common/lib/weui.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}

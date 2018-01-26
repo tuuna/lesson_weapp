@@ -10,6 +10,7 @@ Page({
 
   callQRcode: function () {
     wx.scanCode({
+      onlyFromCamera:true,
       success: (res) => {
         var data = res.result;
         var str = "promotion.coupon.code.yingwumeijia.com";

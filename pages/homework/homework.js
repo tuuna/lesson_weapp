@@ -1,30 +1,26 @@
 Page({
   data: {
-    openPicker: false,
-    needAnimation: false,
-    contentHeight: 0
+    // text:"这是一个页面"
+    open: false
   },
-
-  onLoad: function () {
-
-  },
-
-  onReady: function () {
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          //动态根据手机分辨率来计算内容的高度（屏幕总高度-顶部筛选栏的高度）
-          contentHeight: (res.windowHeight - 72 * res.screenWidth / 750)
-        });
-      }
-    })
-  },
-
-  onPickHeaderClick: function () {
+  showitem: function () {
     this.setData({
-      openPicker: !this.data.openPicker,
-      needAnimation: true
+      open: !this.data.open
     })
   },
+  onLoad: function (options) {
+    // 页面初始化 options为页面跳转所带来的参数
+  },
+  onReady: function () {
+    // 页面渲染完成
+  },
+  onShow: function () {
+    // 页面显示
+  },
+  onHide: function () {
+    // 页面隐藏
+  },
+  onUnload: function () {
+    // 页面关闭
+  }
 })
