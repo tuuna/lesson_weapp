@@ -11,8 +11,5 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-    $router->get('auth/login','AuthController@getLogin');
-    $router->post('auth/login','AuthController@postLogin');
-    $router->get('auth/login/reset','AuthController@reset');
-
+    $router->get('/qr', 'QrController@index');
 });
