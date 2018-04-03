@@ -6,7 +6,25 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     this.initEleWidth();
-    this.tempData();
+    // this.tempData();
+    var that = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        console.log(res.data)
+        wx.request({
+          url: 'http://127.0.0.1:8000/api/tasklist',
+          data: { token: res.data },
+          method: 'post',
+          success: function (data) {
+            console.log(data.data)
+            that.setData({
+              list: data.data.data
+             })
+          }
+        })
+      }
+    })
   },
   onReady: function () {
     // 页面渲染完成
@@ -69,6 +87,7 @@ Page({
       var index = e.target.dataset.index;
       var list = this.data.list;
       list[index].txtStyle = txtStyle;
+      
       //更新列表的状态
       this.setData({
         list: list
@@ -100,77 +119,24 @@ Page({
     //获取列表中要删除项的下标
     var index = e.target.dataset.index;
     var list = this.data.list;
-    //移除列表中下标为index的项
+    console.log(list[index].id);
+    wx.request({
+      url: "http://127.0.0.1:8000/api/deltask",
+      data: { id: list[index].id },
+      method: "post",
+      success: function (res) {
+        //移除列表中下标为index的项
+        console.log(res)
+      }
+    })
     list.splice(index, 1);
     //更新列表的状态
     this.setData({
       list: list
     });
+    
+    
   },
   //测试临时数据
-  tempData: function () {
-    var list = [
-      {
-        txtStyle: "",
-        icon: "/images/icon0.png",
-        txt: "向左滑动可以删除"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon6.png",
-        txt: "微信小程序|联盟（wxapp-union.com）"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon1.png",
-        txt: "圣诞老人是爸爸，顺着烟囱往下爬，礼物塞满圣诞袜，平安糖果一大把"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon2.png",
-        txt: "圣诞到来，元旦还会远吗？在圣诞这个日子里"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon3.png",
-        txt: "圣诞节(Christmas或Cristo Messa ),译名为“基督弥撒”。"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon4.png",
-        txt: "一年一度的圣诞节即将到来,姑娘们也纷纷开始跑趴了吧!"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon5.png",
-        txt: "圣诞节(Christmas或Cristo Messa ),译名为“基督弥撒”。"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon2.png",
-        txt: "你的圣诞节礼物准备好了吗?"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon3.png",
-        txt: "一年一度的圣诞节即将到来,姑娘们也纷纷开始跑趴了吧!"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon4.png",
-        txt: "圣诞到来，元旦还会远吗？"
-      },
-      {
-        txtStyle: "",
-        icon: "/images/icon5.png",
-        txt: "记下这一刻的心情"
-      },
-
-    ];
-
-    this.setData({
-      list: list
-    });
-  }
 
 })

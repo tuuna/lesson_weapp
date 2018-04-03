@@ -7,7 +7,9 @@
     "pages/signin/signin",
     "pages/homework/homework",
     "pages/suggestion/suggestion",
-    "pages/ucenter/ucenter"
+    "pages/ucenter/ucenter",
+    "pages/reg/reg",
+    "pages/nuist/nuist"
   ],
   "window": {
     "backgroundTextStyle": "light",

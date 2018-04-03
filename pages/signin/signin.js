@@ -9,41 +9,41 @@ Page({
   },
 
   callQRcode: function () {
-    wx.scanCode({
-      onlyFromCamera:true,
-      success: (res) => {
-        var data = res.result;
-        var str = "promotion.coupon.code.yingwumeijia.com";
-        var arr = null;
-        if (data.indexOf(str) > -1) {
-          arr = data.split(str);
-          var api = "https://preconapi.yingwumeijia.com/activity/coupon/use?couponCode=" + arr[1];
-
-          wx.request({
-            url: api, //仅为示例，并非真实的接口地址
-            method: "POST",
-            success: function (res) {
-              if (res.data.succ) {
-                wx.showToast({
-                  title: "签到成功",
-                  image: "../images/download_close_ico@3x.png",
-                  duration: 3000,
-                  mask: true
-                });
+    wx.getStorage({
+      key: 'token',
+      success: function(tres) {
+        wx.scanCode({
+          onlyFromCamera: true,
+          success: (res) => {
+            console.log(res);
+            var data = res.result;
+            var api = data + "/"+tres.data;
+            wx.request({
+              url: api, 
+              method: "GET",
+              success: function (res) {
+                console.log(res)
+                if (res.data.code == '200') {
+                  wx.showToast({
+                    title: "签到成功",
+                    // image: "../images/download_close_ico@3x.png",
+                    duration: 3000,
+                    mask: true
+                  });
+                }
+                else {
+                  wx.showToast({
+                    title: res.data.msg,
+                    // image: "../images/download_close_ico@3x.png",
+                    duration: 3000,
+                    mask: false
+                  });
+                }
               }
-              else {
-                wx.showToast({
-                  title: res.data.message,
-                  image: "../images/download_close_ico@3x.png",
-                  duration: 3000,
-                  mask: true
-                });
-              }
-            }
-          })
-        }
-
-      }
+            })
+          }
+      })
+    }
     })
   },
 

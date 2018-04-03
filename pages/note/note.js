@@ -1,8 +1,26 @@
 Page({
   data: {
-    tempFilePaths: ''
+    tempFilePaths: '',
+    token: ''
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    var that = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.request({
+          url: "http://127.0.0.1:8000/api/getNote",
+          data: { token: res.data },
+          method: "POST",
+          success: function (data) {
+            console.log(data.data)
+            that.setData({
+              lists: data.data.data
+            })
+          }
+        })
+      }
+    })
   },
   chooseimage: function () {
     var that = this;
@@ -23,6 +41,17 @@ Page({
   },
 
   chooseWxImage: function (type) {
+    
+    var token = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        console.log(res.data)
+        token.setData({
+          token: res.data
+        })
+      }
+    })
     var that = this;
     wx.chooseImage({
       sizeType: ['original', 'compressed'],
@@ -32,7 +61,32 @@ Page({
         that.setData({
           tempFilePaths: res.tempFilePaths[0],
         })
-      }
+         var tempFilePaths = res.tempFilePaths
+         console.log(tempFilePaths[0])
+         console.log(token.data.token)
+         wx.uploadFile({
+           url: 'http://127.0.0.1:8000/api/upload',
+           filePath: tempFilePaths[0],
+           name: 'file',
+           formData: {
+             'token': token.data.token
+           },
+           success: function (res) {
+             console.log(res.data)
+              wx.switchTab({
+              url: '/pages/note/note',
+               //页面刷新
+               success: function (e) {
+                 var page = getCurrentPages().pop();
+                 if (page == undefined || page == null) return;
+                 page.onLoad();
+               }
+             })
+            //  var data = res.data
+             //do something  
+           }  
+      })
+    }
     })
   }
 

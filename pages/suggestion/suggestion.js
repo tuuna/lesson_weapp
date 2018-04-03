@@ -24,17 +24,25 @@ Page({
   
   },
 
-  // /**
-  //  * 跳转页面
-  //  */
-  // onTouch: function (event) {
-  //   wx.navigateTo({
-  //     url: '../note/note',
-  //     success: function (res) {
-  //       console.log('1')
-  //     }
-  //   })
-  // },
+  formSubmit: function (e) {
+    var that = this;
+    var formData = e.detail.value;
+    console.log(formData);
+    wx.request({
+      url: 'http://127.0.0.1:8000/api/send',
+      data: formData,
+      method: 'post',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        wx.navigateTo({
+          url: '../index/index',
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示

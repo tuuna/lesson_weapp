@@ -10,6 +10,32 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if(res.code) {
+          wx.request({
+            url: 'http://127.0.0.1:8000/api/onLogin',
+            data: {code:res.code},
+            method: 'POST',
+            header:{'content-type':'application/json'},
+            success:function(data){
+              console.log(data.data)
+              wx.setStorage({
+                key: 'token',
+                data: data.data.token,
+              })
+               if(data.data.code == '400') {
+                 wx.navigateTo({
+                   url: '/pages/reg/reg'
+                 }); 
+               } else if(data.data.code == '200'){
+                 console.log('登录成功')
+               } else {
+                 console.log('服务器出错')
+               }
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败!'+res.errMsg)
+        }
       }
     })
     // 获取用户信息

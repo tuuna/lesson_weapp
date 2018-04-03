@@ -1,15 +1,51 @@
 Page({
   data: {
     // text:"这是一个页面"
-    open: false
+    open: false,
+    // detail: false
+    _point: undefined
   },
-  showitem: function () {
+  showitem: function (event) {
+    // if(this.data.detail) {
+    //   this.setData({
+    //     open: !this.data.open,
+    //     detail: !this.data.detail
+    //   })
+    // } else {
+    //   this.setData({
+    //     open: !this.data.open
+    //   })
+    // } 
     this.setData({
-      open: !this.data.open
+      _point: event.currentTarget.dataset.time,
+      open: !this.data.open,
+      detail: this.data.detail == true ? false :false
+    })
+  },
+  showdetail: function () {
+    this.setData({
+      detail: !this.data.detail
     })
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+    var that = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        wx.request({
+          url: 'http://127.0.0.1:8000/api/getWork',
+          data: {token:res.data},
+          method: 'post',
+          success: function (data) {
+            console.log(data.data.data)
+            that.setData({
+              homeworks: data.data.data
+            })
+          }
+        })
+      }
+    })
   },
   onReady: function () {
     // 页面渲染完成

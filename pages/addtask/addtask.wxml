@@ -1,11 +1,12 @@
-<form catchsubmit="formSubmit" catchreset="formReset">
+<form bindsubmit="formSubmit" bindreset="formReset">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
         <view class="weui-label">添加任务</view>
       </view>
       <view class="weui-cell__bd">
-        <input name="input" class="weui-input" placeholder="请输入文本" />
+        <input name="content" class="weui-input" placeholder="请输入文本" />
       </view>
+      <input hidden="true" name="token" value="{{token}}" />
     </view>
 
   <view class="weui-btn-area">

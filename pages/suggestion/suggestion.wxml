@@ -1,15 +1,40 @@
+
+
 <view class="section">意见反馈</view>
-<form bindsubmit="formSubmit" bindreset="formReset">
-  <view class="email_parten">
-    <view class="email_parten_title">邮箱</view>
-    <input name="email" placeholder="输入老师的邮箱号" />
-  </view>
-  <view class="content_parten">
-    <view class="content_parten_title">意见内容</view>
-    <textarea class="textarea_content" auto-focus='true' placeholder='请输入对老师的意见反馈' />
-  </view>
-  <view class="btn-area">
-    <button formType="submit">提交</button>
-    <button formType="reset">清空</button>
-  </view>
+
+
+<form bindsubmit="formSubmit" bindreset="formReset" >
+
+ <!--用户名与密码-->
+
+ <View class="inputView">
+
+ <input class="input" name="email" type="text" placeholder="请输入老师的邮箱" placeholder-style="color: gray"> </input>
+
+ </View>
+
+ <view class="inputView">
+
+ <input class="input" name="content" type="textarea" placeholder="请输入意见" placeholder-style="color: gray"/>
+
+ </view>
+
+
+
+ <!-- <input hidden="true" name="token" value="{{token}}"/> -->
+
+ <!--登录用户类型-->
+
+ <View style="display:flex;justify-content: center;margin-top:10px;">
+
+
+
+ </View>
+
+ <!--button formType属性两个可选值submit, reset分别会触发form的bindsubmit，bindreser事件 -->
+
+ <button formType="submit" type="primary" style="margin-top:10px;">提交</button>
+
+ <button formType="reset" type="warn" style="margin-top:10px;">重置</button>
+
 </form>

@@ -1,2 +1,16 @@
 <button style="margin:30rpx;" bindtap="chooseimage">记笔记</button>
 <image src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit" style="width: 100%; height: 450rpx" />
+
+<!-- <view class="container">
+    <view class="content">
+        <view class="img-list1"> -->
+            <view class="ul">
+                <view class="li" wx:for="{{lists}}" wx:for-item="item">
+                {{item.date}}
+                        <image src="{{item.img}}" mode="widthFix"></image>
+                        <view class="bg"></view>
+                </view>
+            </view>
+        <!-- </view>
+    </view>
+</view> -->

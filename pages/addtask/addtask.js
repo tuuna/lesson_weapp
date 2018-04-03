@@ -12,7 +12,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var token = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        console.log(res.data)
+        token.setData({
+          token: res.data
+        })
+      }
+    })
   },
 
   /**
@@ -62,5 +71,29 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  formSubmit: function (e) {
+    var that = this;
+    var formData = e.detail.value;
+    console.log(formData);
+    wx.request({
+      url: 'http://127.0.0.1:8000/api/ctask',
+      data: formData,
+      method: 'post',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function() {
+        wx.switchTab({
+          url: '/pages/index/index',
+          //页面刷新
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+          } 
+        })
+      }
+    })
   }
 })

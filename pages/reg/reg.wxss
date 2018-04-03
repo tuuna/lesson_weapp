@@ -1,9 +1,4 @@
 /* pages/reg/reg.wxss */
-.section{
-  margin-top: 20px;
-  font-weight: 20;
-  text-align: center;
-}
 .input{
 
  padding-left: 10px;

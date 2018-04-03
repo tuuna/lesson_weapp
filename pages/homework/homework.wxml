@@ -1,8 +1,24 @@
+<wxs module="util">
+
+    var sub = function(val) {
+
+        return val.substring(0, 9)
+
+    }
+
+    module.exports.sub = sub;
+
+</wxs>
 <view class="page">
-    <view class="page_bd">
-        <view class="body_head" bindtap="showitem">2018-01-26</view>
-        <navigator url="../views/navigators/navigator1/navigator1"><view class="{{open?'display_show':'display_none'}}">高等数学</view></navigator>
-        <navigator url="../views/navigators/navigator2/navigator2"><view class="{{open?'display_show':'display_none'}}">离散数学</view></navigator>
-        <navigator url="../views/navigators/navigator3/navigator3"><view class="{{open?'display_show':'display_none'}}">概率论</view></navigator>
+    <view class="page_bd" wx:for="{{homeworks}}" wx:for-index="time"
+    wx:for-item="value">
+        <view class="body_head " data-time='{{time}}' bindtap="showitem">{{time}}</view>
+        <view wx:for="{{value}}" class="display_none {{_point == time? 'item_display' : ''}} ">
+          <view class="{{open?'display_show':'display_none'}}" bindtap="showdetail" >{{item.coursename}}</view>
+          <view class="{{detail?'display_show':'display_none'}}">
+            <view>作业内容: {{item.content}}</view> 
+            <view>上交时间: {{item.subtime}}</view> 
+          </view>
+        </view>
     </view>
 </view>

@@ -1,0 +1,40 @@
+<!--
+
+form表单组件 是提交form内的所有选中属性的值，
+
+注意每个form表单内的组件都必须有name属性指定否则提交不上去，
+
+button中的type两个submit，reset属性分别对应form的两个事件
+
+-->
+
+<form bindsubmit="formSubmit" bindreset="FormReset" >
+
+ <!--用户名与密码-->
+
+ <View class="inputView">
+
+ <input class="input" name="username" type="text" placeholder="请输入学号" placeholder-style="color: gray"> </input>
+
+ </View>
+
+ <view class="inputView">
+
+ <input class="input" name="password" type="number" placeholder="请输入教务系统密码" placeholder-style="color: gray"/>
+
+ </view>
+ <!--登录用户类型-->
+
+ <View style="display:flex;justify-content: center;margin-top:10px;">
+ </View>
+
+ <!--button formType属性两个可选值submit, reset分别会触发form的bindsubmit，bindreser事件 -->
+
+ <button formType="submit" type="primary" style="margin-top:10px;">提交</button>
+
+ <button formType="reset" type="warn" style="margin-top:10px;">重置</button>
+
+</form>
+<toast hidden="{{toast1Hidden}}" bindchange="toast1Change">  
+        {{notice_str}}  
+</toast>  
