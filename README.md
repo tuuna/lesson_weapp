@@ -35,6 +35,9 @@
 您可以通过[项目地址](https://cms.vampirebitter.top)来进行访问
 您若需要clone到本地请参照laravel的配置方法
 
+### 爬取课程表
+[timeTable](https://github.com/vampirebitter/timetable)
+
 ------
 
 ## 提示
