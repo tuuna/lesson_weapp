@@ -27,7 +27,7 @@
 ### 小程序客户端+JS中间层
 
 ### PHP后端提供API
-使用Laravel完成,[API]("https://github.com/vampirebitter/weapp_lesson_backend")
+使用Laravel完成,[API](https://github.com/vampirebitter/weapp_lesson_backend)
 您若需要clone到本地请参照laravel的配置方法
 
 ### CMS老师的后台管理系统
