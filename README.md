@@ -1,6 +1,7 @@
 # lesson_weapp
+> 您可以通过微信小程序搜索课堂一键通或者扫码访问
 
-
+![小程序码](https://github.com/vampirebitter/lesson_weapp/blob/master/gh_824c2f54abbf_344.jpg)
 
 ## 基本功能
 
@@ -27,16 +28,19 @@
 
 ### PHP后端提供API
 使用Laravel完成,[API]("https://github.com/vampirebitter/weapp_lesson_backend")
+您若需要clone到本地请参照laravel的配置方法
 
 ### CMS老师的后台管理系统
-使用Laravel-admin后台管理系统完成,[cms]("https://github.com/vampirebitter/weapp_lesson_cms")
-您可以通过[项目地址]("https://cms.vampirebitter.top")来进行访问
+使用Laravel-admin后台管理系统完成,[cms](https://github.com/vampirebitter/weapp_lesson_cms)
+您可以通过[项目地址](https://cms.vampirebitter.top)来进行访问
+您若需要clone到本地请参照laravel的配置方法
 
 ------
 
 ## 提示
 
-**此项目仅做参考**，因为是很短时间做出来的残次品，无论是代码逻辑，还是代码风格，亦或是完整度都是不够的，只是实现了功能！！
+**此项目仅做参考**，因为是很短时间做出来的残次品，无论是代码逻辑，还是代码风格，或是页面布局，亦或是完整度都是不够的，只是实现了功能！！
+
 
 ## LICENSE
 MIT
