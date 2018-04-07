@@ -12,7 +12,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if(res.code) {
           wx.request({
-            url: 'http://127.0.0.1:8000/api/onLogin',
+            url: 'https://class.vampirebitter.top/api/onLogin',
             data: {code:res.code},
             method: 'POST',
             header:{'content-type':'application/json'},

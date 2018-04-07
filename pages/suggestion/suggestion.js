@@ -29,7 +29,7 @@ Page({
     var formData = e.detail.value;
     console.log(formData);
     wx.request({
-      url: 'http://127.0.0.1:8000/api/send',
+      url: 'https://class.vampirebitter.top/api/send',
       data: formData,
       method: 'post',
       header: {
@@ -37,11 +37,34 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
-        wx.navigateTo({
-          url: '../index/index',
-        })
+        if (res.data.code == '200') {
+          wx.showToast({
+            title: "签到成功",
+            // image: "../images/download_close_ico@3x.png",
+            duration: 3000,
+            mask: true,
+            success:function() {
+              wx.switchTab({
+                url: '/pages/ucenter/ucenter',
+              })
+            }
+          });
+        }
+        else {
+          wx.showToast({
+            title: res.data.msg,
+            // image: "../images/download_close_ico@3x.png",
+            duration: 3000,
+            mask: false,
+            success: function () {
+              wx.switchTab({
+                url: '/pages/ucenter/ucenter',
+              })
+            }
+          });
+        }
       }
-    })
+      })
   },
 
   /**

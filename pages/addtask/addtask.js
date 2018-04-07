@@ -77,7 +77,7 @@ Page({
     var formData = e.detail.value;
     console.log(formData);
     wx.request({
-      url: 'http://127.0.0.1:8000/api/ctask',
+      url: 'https://class.vampirebitter.top/api/ctask',
       data: formData,
       method: 'post',
       header: {

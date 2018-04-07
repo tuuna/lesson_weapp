@@ -74,7 +74,7 @@ Page({
     })
     var list = this;
     wx.request({
-      url: 'http://127.0.0.1:8000/api/getProject',
+      url: 'https://class.vampirebitter.top/api/getProject',
       method: 'get',
       success: function(data) {
         list.setData({
@@ -99,7 +99,7 @@ Page({
     var formData = e.detail.value;
     console.log(formData);
     wx.request({
-      url: 'http://127.0.0.1:8000/api/reg',
+      url: 'https://class.vampirebitter.top/api/reg',
       data: formData,
       method: 'post',
       header: {

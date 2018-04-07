@@ -1,5 +1,5 @@
 <button style="margin:30rpx;" bindtap="chooseimage">记笔记</button>
-<image src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit" style="width: 100%; height: 450rpx" />
+<!-- <image src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit" style="width: 100%; height: 450rpx" /> -->
 
 <!-- <view class="container">
     <view class="content">

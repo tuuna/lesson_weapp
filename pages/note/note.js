@@ -1,7 +1,8 @@
 Page({
   data: {
     tempFilePaths: '',
-    token: ''
+    token: '',
+    lists:{}
   },
   onLoad: function (options) {
     var that = this;
@@ -9,7 +10,7 @@ Page({
       key: 'token',
       success: function (res) {
         wx.request({
-          url: "http://127.0.0.1:8000/api/getNote",
+          url: "https://class.vampirebitter.top/api/getNote",
           data: { token: res.data },
           method: "POST",
           success: function (data) {
@@ -21,6 +22,18 @@ Page({
         })
       }
     })
+  },
+  onPullDownRefresh: function(){
+    wx.switchTab({
+      url: '/pages/note/note',
+      //页面刷新
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      }
+    })
+    wx.stopPullDownRefresh();
   },
   chooseimage: function () {
     var that = this;
@@ -65,7 +78,7 @@ Page({
          console.log(tempFilePaths[0])
          console.log(token.data.token)
          wx.uploadFile({
-           url: 'http://127.0.0.1:8000/api/upload',
+           url: 'https://class.vampirebitter.top/api/upload',
            filePath: tempFilePaths[0],
            name: 'file',
            formData: {

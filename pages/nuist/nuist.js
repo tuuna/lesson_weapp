@@ -65,7 +65,7 @@ Page({
     var formData = e.detail.value;
     console.log(formData);
     wx.request({
-      url: 'http://127.0.0.1:8000/api/getTimetable',
+      url: 'https://class.vampirebitter.top/api/getTimetable',
       data: formData,
       method: 'post',
       header: {

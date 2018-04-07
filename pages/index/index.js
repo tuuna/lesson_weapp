@@ -13,7 +13,7 @@ Page({
       success: function (res) {
         console.log(res.data)
         wx.request({
-          url: 'http://127.0.0.1:8000/api/tasklist',
+          url: 'https://class.vampirebitter.top/api/tasklist',
           data: { token: res.data },
           method: 'post',
           success: function (data) {
@@ -121,7 +121,7 @@ Page({
     var list = this.data.list;
     console.log(list[index].id);
     wx.request({
-      url: "http://127.0.0.1:8000/api/deltask",
+      url: "https://class.vampirebitter.top/api/deltask",
       data: { id: list[index].id },
       method: "post",
       success: function (res) {

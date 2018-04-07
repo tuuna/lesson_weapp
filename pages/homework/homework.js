@@ -34,7 +34,7 @@ Page({
       key: 'token',
       success: function (res) {
         wx.request({
-          url: 'http://127.0.0.1:8000/api/getWork',
+          url: 'https://class.vampirebitter.top/api/getWork',
           data: {token:res.data},
           method: 'post',
           success: function (data) {
