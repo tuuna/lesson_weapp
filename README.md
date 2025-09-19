@@ -1,9 +1,5 @@
 # 此项目已废弃
 
-# lesson_weapp
-> 您可以通过微信小程序搜索课堂一键通或者扫码访问
-
-![小程序码](https://github.com/vampirebitter/lesson_weapp/blob/master/gh_824c2f54abbf_344.jpg)
 
 ## 基本功能
 
